@@ -1,0 +1,35 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container mt-5 mx-5">
+    <div class="create-category">
+        <a asp-area="admin" asp-controller="Category" asp-action="Create" class="btn btn-success text-white" style="font-size:30px;width120px">+</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Category name </th>
+                <th> Operations </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        @item.Name
+                    </td>
+                    <td>
+                        <a class="btn btn-info text-white">Info</a>
+                        <a class="btn btn-warning text-white">edit</a>
+                        <a class="btn btn-danger text-white">delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
